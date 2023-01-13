@@ -1,0 +1,79 @@
+body {
+    font-size:16px;
+    margin:0px;
+    padding:0px;
+    display:flex;
+    flex-direction:column;
+    background-color:#403835;
+    background-image: url("https://i.ibb.co/tPbncYq/New-Piskel-5.png");
+}
+
+button {
+    border:none;
+    appearance:none;
+    outline:none;
+    display:inline-block;
+    font-size:2.74vh;
+    cursor:pointer;
+    text-decoration:none;
+    padding:4vh 8vh 4vh 8vh;
+    border-radius:0.7vh;
+    color:#ffffff;
+    background-color:#3f4f83;
+    border: 0.4vh solid #ffffff;   
+}
+button {   transition-duration: 0.4s; }
+button:hover {
+    font-size:1.2.74vh;
+    background-color:#05c46b;
+    padding:4vh 8vh 4vh 8vh;
+} 
+.screen {
+    padding: 1px;     
+    position: fixed; 
+    top:50%;     
+    left:50%;     
+    margin-top: 17vh;     
+    margin-left: -16vh;          
+    height:4vh;     
+    width:5vh;     
+    text-align: center;
+}
+
+.screen2 {
+    padding: 1px;     
+    position: fixed; 
+    top:37%;     
+    left:48%;     
+    margin-top: 17vh;     
+    margin-left: -16vh;          
+    height:4vh;     
+    width:5vh;     
+    text-align: center;
+}
+
+.image3 {
+    height: 32.5vh;
+    width: 70vh;
+    margin-top: -50vh;     
+    margin-left: 40vh; 
+}
+
+.image2 {
+    height: 50vh;
+    width: 50vh;
+    margin-top: -70vh;     
+    margin-left: -10vh; 
+}
+
+.image {
+    height: 30vh;
+    width: 70vh;
+    margin-top: -50vh;     
+    margin-left: -90vh; 
+}
+
+.restart {
+    margin-top: 66.5vh;     
+    margin-left: 80vh; 
+}

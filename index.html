@@ -1,0 +1,219 @@
+<head>
+  <title>Ninja Slash</title>
+  <link rel="icon" href="https://i.ibb.co/Htnq53N/New-Piskel-1-3.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+    href="style.css"
+    rel="stylesheet"
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Press Start 2P', cursive;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- red container div -->
+  <div style="position: relative; display:block">
+    <!-- smaller red container div -->
+    <div id='big-div'
+      style="
+        position: absolute;
+        display: none;
+        width: 100%;
+        align-items: center;
+        padding: 20px;
+      "
+    >
+      <!-- player health -->
+      <div
+        id="health-bar"
+        style="
+          position: relative;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          border-top: 0.54vh solid white;
+          border-left: 0.54vh solid white;
+          border-bottom: 0.54vh solid white;
+        "
+      >
+        <div style="background-color: red; height: 7vh; width: 100%"></div>
+        <div
+          id="playerHealth"
+          style="
+            position: absolute;
+            background: #818cf8;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+          "
+        ></div>
+      </div>
+
+      <!-- timer -->
+      <div
+        id="timer"
+        style="
+          background-color: black;
+          width: 25vh;
+          height: 12vh;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          border: 0.54vh solid white;
+          font-size: 3vh;
+        "
+      >
+      Ready?  
+      </div>
+      <!--counter in start-->
+      <div 
+        id="counter" 
+        style=" 
+        position: absolute;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        top: 50vh;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        visibility: visible;
+        font-size:8vh;"
+        >  </div>
+        <!--GO!-->
+        <div 
+        id="GO" 
+        style=" 
+        position: absolute;
+        color: Green;
+        align-items: center;
+        justify-content: center;
+        top: 50vh;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        visibility: visible;
+        font-size:10vh;"
+        >GO!</div>
+      <!-- enemy health -->
+      <div
+        style="
+          position: relative;
+          width: 100%;
+          border-top: 0.54vh solid white;
+          border-bottom: 0.54vh solid white;
+          border-right: 0.54vh solid white;
+        "
+      >
+        <div style="background-color: red; height: 7vh; width: 100%"></div>
+        <div
+          id="enemyHealth"
+          style="
+            position: absolute;
+            background: #818cf8;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+          "
+        ></div>
+      </div>
+      <div class="screen2">
+        <button id='restart'  style='display:none' onclick='window.location.reload()'>Restart?</button>
+      </div>
+      <div></div>
+    </div>
+    <div
+      id="displayText"
+      style="
+        position: absolute;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        top: 45vh;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: none;
+        font-size:2.74vh;
+        "
+    >
+      Tie
+    </div>
+    
+  </div>
+
+  <head>
+    <script src='gameloop.js'></script>
+    <link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div id='start-screen' class='screen' style='display:block'>
+        <button id='start-btn' onclick='startGame() + toggle()'>Start Game</button>
+        <img class="image" src="https://i.ibb.co/0DqLSKy/Controls1.png">
+        <img class="image3" src="https://i.ibb.co/tM7mfbf/Controls2.png">
+        <img class="image2" src="https://i.ibb.co/nnKvjGM/New-Piskel-1-2.png">
+    </div>
+    <canvas id="canvas" style='display:none'></canvas>
+  </body>
+
+<script>
+function toggle(){
+    var x = document.getElementById("big-div");
+
+    if(x.style.display === "none") {
+      x.style.display = "flex"
+    }
+
+    var y = document.getElementById("counter");
+    if(y.style.display === "none") {
+      y.style.display = "flex"
+    }
+    
+  setTimeout(() => {
+    var z = document.getElementById("counter");
+      if(z.style.display === "flex") {
+      z.style.display = "none"
+      }
+  }, 3000);
+
+  setTimeout(() => {
+    var a = document.getElementById("GO");
+      if(a.style.display === "none") {
+      a.style.display = "flex"
+      }
+  }, 3000);
+
+  setTimeout(() => {
+    var a = document.getElementById("GO");
+      if(a.style.display === "flex") {
+      a.style.display = "none"
+      }
+  }, 4000);
+
+}
+</script>
+
+
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="js/utils.js"></script>
+  <script src="js/classes.js"></script>
+  <script src="index.js"></script>
+</body>
