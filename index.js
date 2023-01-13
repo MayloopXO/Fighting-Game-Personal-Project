@@ -187,10 +187,10 @@ const keys = {
   d: {
     pressed: false
   },
-  ArrowRight: {
+  l: {
     pressed: false
   },
-  ArrowLeft: {
+  j: {
     pressed: false
   }
 }
@@ -229,10 +229,10 @@ function animate() {
   }
 
   // Enemy movement
-  if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft') {
+  if (keys.j.pressed && enemy.lastKey === 'j') {
     enemy.velocity.x = -5
     enemy.switchSprite('run')
-  } else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight') {
+  } else if (keys.l.pressed && enemy.lastKey === 'l') {
     enemy.velocity.x = 5
     enemy.switchSprite('run')
   } else {
@@ -361,15 +361,15 @@ window.addEventListener('keydown', (event) => {
 
     if (!enemy.dead) {
       switch (event.key) {
-        case 'ArrowRight':
-          keys.ArrowRight.pressed = true
-          enemy.lastKey = 'ArrowRight'
+        case 'l':
+          keys.l.pressed = true
+          enemy.lastKey = 'l'
           break
-        case 'ArrowLeft':
-          keys.ArrowLeft.pressed = true
-          enemy.lastKey = 'ArrowLeft'
+        case 'j':
+          keys.j.pressed = true
+          enemy.lastKey = 'j'
           break
-        case 'ArrowUp':
+        case 'i':
           if (isJumping2) return
           isJumping2 = true
           enemy.velocity.y -= 15 
@@ -377,10 +377,10 @@ window.addEventListener('keydown', (event) => {
               isJumping2 = false
             }, 800);
             break
-        case 'ArrowDown':
+        case 'k':
           enemy.attack()
           break
-        case '/':
+        case 'u':
           enemy.block()
           break
       }
@@ -399,11 +399,11 @@ window.addEventListener('keyup', (event) => {
 
   // enemy keys
   switch (event.key) {
-    case 'ArrowRight':
-      keys.ArrowRight.pressed = false
+    case 'l':
+      keys.l.pressed = false
       break
-    case 'ArrowLeft':
-      keys.ArrowLeft.pressed = false
+    case 'j':
+      keys.j.pressed = false
       break
   }
 })
