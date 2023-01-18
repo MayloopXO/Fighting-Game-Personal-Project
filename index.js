@@ -292,7 +292,7 @@ function animate() {
       rectangle2: player
     }) &&
     enemy.isAttacking &&
-    enemy.framesCurrent === 2
+    enemy.framesCurrent === 1
   ) {
     player.takeHit()
     enemy.isAttacking = false
